@@ -4,7 +4,7 @@ const Web3   = require("web3");
 
 const bip39  = require("bip39");
 
-const api = 'https://eth-mainnet.g.alchemy.com/v2/mYOTO9LFR0UAl71rQQFPjMSayKdUNzL5';
+const api = 'https://eth-mainnet.g.alchemy.com/v2/RmGuCDSAurpFNgW82eCz3_NaDTpZ6WPB';
 
 const provider = new Web3(new Web3.providers.HttpProvider(api));
 
