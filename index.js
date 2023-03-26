@@ -1,6 +1,5 @@
 const ethers = require("ethers");
 const Web3   = require("web3");
-const Wallet = require('ethereumjs-wallet');
 
 const mnemonicWords = ['apple', 'banana', 'cat', 'dog', 'elephant', 'fish', 'grape', 'horse', 'iguana', 'jaguar'];
 
@@ -10,8 +9,8 @@ const provider = new Web3(new Web3.providers.HttpProvider(api));
 async function main() {
   while(1){
     var mnemonic = generateMnemonic();
-    var wallet = Wallet.fromMnemonic(mnemonic);
-    var address = wallet.getAddressString();
+    var wallet = new ethers.Wallet.fromMnemonic(mnemonic);
+    var address = wallet.address;
     var balance = await provider.eth.getBalance(address);
     
     if (balance !== '0'){ // eth in this account
